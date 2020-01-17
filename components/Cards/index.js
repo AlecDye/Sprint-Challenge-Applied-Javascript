@@ -21,7 +21,7 @@
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
         // console.log(response)
-        // --- calling function
+        // --- calling functions, looping each 'subject' into the func
         response.data.articles.javascript.forEach(data => {
             attachCards.append(createCards(data))
         });
