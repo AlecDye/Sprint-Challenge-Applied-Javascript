@@ -46,5 +46,5 @@ function createHeader() {
 const attachHeader = document.querySelector('header-container');
 
 // --- call function
-createHeader();
-console.log(createHeader());
+attachHeader.append(createHeader());
+// console.log(createHeader());
