@@ -25,4 +25,17 @@ function createHeader() {
     headerCont.append(titleHead);
     headerCont.append(tempHead);
 
+    // --- assigning classes
+    headerCont.classList.add(header);
+    dateHead.classList.add(date);
+    tempHead.classList.add(temp);
+
+    // --- return function
+    return headerCont;
 }
+
+// --- addition target of DOM
+const attachHeader = document.querySelector('header-container');
+
+// --- call function
+createHeader();
