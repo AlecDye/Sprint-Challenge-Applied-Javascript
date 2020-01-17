@@ -1,10 +1,10 @@
 // STEP 3: Create Article cards.
 // -----------------------
-// Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
+// 1. Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
 // Stduy the response data you get back, closely.
-// You will be creating a component for each 'article' in the list.
+// 2 .You will be creating a component for each 'article' in the list.
 // This won't be as easy as just iterating over an array though.
-// Create a function that will programmatically create the following DOM component:
+// 3. Create a function that will programmatically create the following DOM component:
 //
 // <div class="card">
 //   <div class="headline">{Headline of article}</div>
@@ -16,4 +16,5 @@
 //   </div>
 // </div>
 //
-// Create a card for each of the articles and add the card to the DOM.
+// 4. Create a card for each of the articles and add the card to the DOM.
+
