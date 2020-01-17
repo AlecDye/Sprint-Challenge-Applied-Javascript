@@ -22,9 +22,19 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
         // console.log(response)
         // --- calling function
-        // createCards(response.data.articles);
-        // error: not a function?
         response.data.articles.javascript.forEach(data => {
+            attachCards.append(createCards(data))
+        });
+        response.data.articles.bootstrap.forEach(data => {
+            attachCards.append(createCards(data))
+        });
+        response.data.articles.technology.forEach(data => {
+            attachCards.append(createCards(data))
+        });
+        response.data.articles.jquery.forEach(data => {
+            attachCards.append(createCards(data))
+        });
+        response.data.articles.node.forEach(data => {
             attachCards.append(createCards(data))
         });
     })
@@ -79,7 +89,3 @@ function createCards(data) {
 
 // --- DOM insert target
 const attachCards = document.querySelector('.cards-container');
-
-// note: need to loop data through func like in tabs
-// console.log(attachCards.append(createCards(data)));
-// error: not getting the data correctly
