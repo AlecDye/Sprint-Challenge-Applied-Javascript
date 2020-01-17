@@ -43,7 +43,7 @@ function createHeader() {
 }
 
 // --- addition target of DOM
-const attachHeader = document.querySelector('header-container');
+const attachHeader = document.querySelector('.header-container');
 
 // --- call function
 attachHeader.append(createHeader());
