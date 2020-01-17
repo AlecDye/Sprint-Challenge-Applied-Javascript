@@ -23,8 +23,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         // console.log(response)
         // --- calling function
         // createCards(response.data.articles);
-        response.data.articles.forEach(data => {
-            createCards(data)
+        // error: not a function?
+        response.data.articles.javascript.forEach(data => {
+            attachCards.append(createCards(data))
         });
     })
     .catch(error => {
@@ -61,10 +62,10 @@ function createCards(data) {
 
 
     // --- assigning classes
-    newCard.classList('card');
-    cardTitle.classList('headline');
-    authorBox.classList('author');
-    imgBox.classList('img-container');
+    newCard.classList.add('card');
+    cardTitle.classList.add('headline');
+    authorBox.classList.add('author');
+    imgBox.classList.add('img-container');
 
     // --- defining content
     // note: rename authorName variable to something else?
@@ -80,5 +81,5 @@ function createCards(data) {
 const attachCards = document.querySelector('.cards-container');
 
 // note: need to loop data through func like in tabs
-console.log(attachCards.append(createCards(data)));
+// console.log(attachCards.append(createCards(data)));
 // error: not getting the data correctly
