@@ -32,9 +32,6 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 function createTabs(topics) {
     // --- create elements
 
-
-    // error: cannot read forEach of undefined?
-    // error: tabItem is not defined?
     topics.forEach(data => {
         const tabItem = document.createElement('div');
         tabItem.classList.add('tab');
@@ -59,7 +56,7 @@ function createTabs(topics) {
 }
 
 // --- DOM target
-const attachTabs = document.querySelector('.title');
+const attachTabs = document.querySelector('.topics');
 
 // // --- calling function
 // attachTabs.append(createTabs());
