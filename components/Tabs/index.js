@@ -26,20 +26,28 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 // 2: "technology"
 // 3: "jquery"
 // 4: "node.js"
+
+// note: this just creates one tab?
+// note: need to create 5 tabs from one element?
 function createTabs(data) {
     // --- create elements
-    const tabItem = document.createElement('div'),
-        tabCont = document.createElement('div');
 
-    // --- appending elements
-    tabCont.append(tabItem);
 
-    // --- assigning classes
-    tabItem.classList.add('tab');
 
-    // --- defining content
-    // error: topics is undefined?
-    tabItem.textContent = data;
+    data.forEach(data => {
+        const tabItem = document.createElement('div'),
+    });
+    //     tabCont = document.createElement('div');
+
+    // // --- appending elements
+    // tabCont.append(tabItem);
+
+    // // --- assigning classes
+    // tabItem.classList.add('tab');
+
+    // // --- defining content
+    // // error: topics is undefined?
+    // tabItem.textContent = data;
 
     // --- returning function
     return tabItem;
