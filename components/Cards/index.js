@@ -22,7 +22,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
         // console.log(response)
         // --- calling function
-        createCards(response.data.articles);
+        // createCards(response.data.articles);
+        response.data.articles.forEach(data => {
+            createCards(data)
+        });
     })
     .catch(error => {
         console.log('Something broke', error)
