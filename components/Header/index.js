@@ -9,4 +9,10 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-function Header() {}
+// append to DOM via div ".header-container"
+// Parent: div
+// Children: span, h1, span
+
+function createHeader() {
+
+}
