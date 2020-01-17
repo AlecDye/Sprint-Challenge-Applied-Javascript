@@ -29,14 +29,19 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 
 // note: this just creates one tab?
 // note: need to create 5 tabs from one element?
-function createTabs(data) {
+function createTabs(topics) {
     // --- create elements
 
 
-
-    data.forEach(data => {
-        const tabItem = document.createElement('div'),
+    // error: cannot read forEach of undefined?
+    // error: tabItem is not defined?
+    topics.forEach(data => {
+        const tabItem = document.createElement('div');
+        tabItem.classList.add('tab');
+        tabItem.textContent = data;
+        attachTabs.append(tabItem);
     });
+
     //     tabCont = document.createElement('div');
 
     // // --- appending elements
@@ -50,12 +55,12 @@ function createTabs(data) {
     // tabItem.textContent = data;
 
     // --- returning function
-    return tabItem;
+    return topics;
 }
 
 // --- DOM target
 const attachTabs = document.querySelector('.title');
 
-// --- calling function
-attachTabs.append(createTabs());
-console.log(createTabs());
+// // --- calling function
+// attachTabs.append(createTabs());
+// console.log(createTabs());
