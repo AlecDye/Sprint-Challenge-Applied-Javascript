@@ -26,3 +26,46 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         console.log('Something broke', error)
     });
 
+// --- data received
+// data > articles > 5 different arrays > objects > 3 key pairs
+// javascript(4 array items), bootstrap(3 items), technology(3), jquery(3), node(2)
+// data.articles.Array.unNamedObject.headline, authorPhoto, authorName
+
+function createCards(articles) {
+
+    // div
+    // headline * author
+    // (inside author) div
+    // (inside author/div) img
+    // (inside author) span
+
+    // --- creating elements
+    const newCard = document.createElement('div'),
+        cardTitle = document.createElement('div'),
+        authorBox = document.createElement('div'),
+        imgBox = document.createElement('div'),
+        authorImg = document.createElement('img'),
+        authorName = document.createElement('span');
+
+    // --- appending elements
+    newCard.append(cardTitle);
+    newCard.append(authorBox);
+    authorBox.append(imgBox);
+    authorBox.append(authorName);
+    imgBox.append(authorImg);
+
+
+    // --- assigning classes
+    newCard.classList('card');
+    cardTitle.classList('headline');
+    authorBox.classList('author');
+    imgBox.classList('img-container');
+
+    // --- defining content
+    // note: rename authorName variable to something else?
+    cardTitle.textContent = headline;
+    authorImg.src = authorPhoto;
+    authorName.textContent = authorName;
+
+
+}
