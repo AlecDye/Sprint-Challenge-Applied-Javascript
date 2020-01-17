@@ -30,6 +30,8 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+A: DOM is an abbreviation of Document Object Model. It is an object representation of all elements within a webpage, and since everything is an object it can be manipulated in JavaScript. It is easiest to visualize as a tree structure with objects/elements branching off (or belonging to) other objects/elements.
+
 2. What is an event?
 
 3. What is an event listener?
