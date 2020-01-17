@@ -42,7 +42,7 @@ A: An event listener is the conditions for an event to "fire" or "act". Once tha
 
 4. Why would we convert a NodeList into an Array?
 
-A: 
+A: We can't really manipulate a NodeList in the same way we can an Array. By converting a NodeList (from a server  request) to an Array we can run code on that data.
 
 5. What is a component?
 
