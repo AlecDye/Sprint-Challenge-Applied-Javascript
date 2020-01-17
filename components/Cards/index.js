@@ -20,7 +20,9 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
-        console.log(response)
+        // console.log(response)
+        // --- calling function
+        createCards(response.data.articles);
     })
     .catch(error => {
         console.log('Something broke', error)
@@ -31,7 +33,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
 // javascript(4 array items), bootstrap(3 items), technology(3), jquery(3), node(2)
 // data.articles.Array.unNamedObject.headline, authorPhoto, authorName
 
-function createCards(articles) {
+function createCards(data) {
 
     // div
     // headline * author
@@ -45,13 +47,13 @@ function createCards(articles) {
         authorBox = document.createElement('div'),
         imgBox = document.createElement('div'),
         authorImg = document.createElement('img'),
-        authorName = document.createElement('span');
+        author = document.createElement('span');
 
     // --- appending elements
     newCard.append(cardTitle);
     newCard.append(authorBox);
     authorBox.append(imgBox);
-    authorBox.append(authorName);
+    authorBox.append(author);
     imgBox.append(authorImg);
 
 
@@ -63,9 +65,17 @@ function createCards(articles) {
 
     // --- defining content
     // note: rename authorName variable to something else?
-    cardTitle.textContent = headline;
-    authorImg.src = authorPhoto;
-    authorName.textContent = authorName;
+    cardTitle.textContent = data.headline;
+    authorImg.src = data.authorPhoto;
+    author.textContent = data.authorName;
 
-
+    // --- return function
+    return newCard;
 }
+
+// --- DOM insert target
+const attachCards = document.querySelector('.cards-container');
+
+// note: need to loop data through func like in tabs
+console.log(attachCards.append(createCards(data)));
+// error: not getting the data correctly
