@@ -11,7 +11,8 @@
 // --- server request
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(response => {
-        console.log(response)
+        // console.log(response)
+        createTabs(response.data.topics);
     })
     .catch(error => {
         console.log('Error something went wrong', error)
@@ -37,7 +38,8 @@ function createTabs(data) {
     tabItem.classList.add('tab');
 
     // --- defining content
-    tabItem.textContent = data.topics;
+    // error: topics is undefined?
+    tabItem.textContent = data;
 
     // --- returning function
     return tabItem;
