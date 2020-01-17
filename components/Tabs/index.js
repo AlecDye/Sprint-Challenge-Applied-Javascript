@@ -26,5 +26,26 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 // 3: "jquery"
 // 4: "node.js"
 function createTabs(data) {
+    // --- create elements
+    const tabItem = document.createElement('div'),
+        tabCont = document.createElement('div');
 
+    // --- appending elements
+    tabCont.append(tabItem);
+
+    // --- assigning classes
+    tabItem.classList.add('tab');
+
+    // --- defining content
+    tabItem.textContent = data.topics;
+
+    // --- returning function
+    return tabItem;
 }
+
+// --- DOM target
+const attachTabs = document.querySelector('.title');
+
+// --- calling function
+attachTabs.append(createTabs());
+console.log(createTabs());
